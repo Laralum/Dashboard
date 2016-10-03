@@ -12,7 +12,6 @@
 namespace Laralum\Dashboard;
 
 use Illuminate\Support\Facades\Facade;
-use Request;
 use Laralum\Laralum\Packages;
 
 /**
@@ -22,27 +21,27 @@ use Laralum\Laralum\Packages;
  */
 class Widgets extends Facade
 {
-
     /**
-     * Returns all the widgets
+     * Returns all the widgets.
      */
     public static function get()
     {
         $widgets = [];
         foreach (Packages::all() as $package) {
-            $dir = __DIR__ . '/../../' . $package .'/src/Widgets';
+            $dir = __DIR__.'/../../'.$package.'/src/Widgets';
 
             $files = is_dir($dir) ? scandir($dir) : [];
             foreach ($files as $file) {
                 if ($file != '.' and $file != '..') {
-                    # Widget found, get the data
+                    // Widget found, get the data
                     $name = substr($file, 0, -4);
                     if (!array_key_exists($name, $widgets)) {
-                        $widgets[$name] = include __DIR__ . '/../../' . $package .'/src/Widgets/' . $file;
+                        $widgets[$name] = include __DIR__.'/../../'.$package.'/src/Widgets/'.$file;
                     }
                 }
             }
         }
+
         return $widgets;
     }
 }
