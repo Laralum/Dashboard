@@ -18,16 +18,16 @@ class DashboardServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__.'/Views', 'dashboard');
 
-        if (! $this->app->routesAreCached()) {
+        if (!$this->app->routesAreCached()) {
             require __DIR__.'/Routes/web.php';
         }
 
         Menu::add([
             'header' => trans('dashboard::general.dashboard'),
-            'items' => [
+            'items'  => [
                 [
-                    'text' => trans('dashboard::general.my_dashboard'),
-                    'route' => "Laralum::dashboard",
+                    'text'  => trans('dashboard::general.my_dashboard'),
+                    'route' => 'Laralum::dashboard',
                 ],
             ],
         ]);
@@ -40,6 +40,5 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }
