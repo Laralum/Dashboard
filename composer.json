@@ -1,0 +1,15 @@
+{
+    "name": "laralum/dashboard",
+    "description": "Dashboard module for laralum",
+    "require": {
+		"laralum/laralum": "1.*"
+	},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erik Campobadal",
+            "email": "soc@erik.cat"
+        }
+    ],
+    "minimum-stability": "dev"
+}
