@@ -21,16 +21,6 @@ class DashboardServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             require __DIR__.'/Routes/web.php';
         }
-
-        Menu::add([
-            'header' => trans('dashboard::general.dashboard'),
-            'items'  => [
-                [
-                    'text'  => trans('dashboard::general.my_dashboard'),
-                    'route' => 'Laralum::dashboard',
-                ],
-            ],
-        ]);
     }
 
     /**
