@@ -1,8 +1,8 @@
 @extends('laralum::layouts.master')
-@section('title', trans('dashboard::general.dashboard') )
+@section('title', trans('laralum_dashboard::general.dashboard') )
 @section('icon', "mdi-view-dashboard")
 @section('subtitle')
-    {{ trans('dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
+    {{ trans('laralum_dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
 @endsection
 @section('content')
     @forelse($widgets as $widget)
@@ -19,16 +19,17 @@
 
     @empty
 
-        <div class="column">
-            <div class="ui padded segment">
-                <center>
-                    <h1>
-                        {{ trans('dashboard::general.no_widgets') }}<br>
-                        <i class="frown huge icon"></i>
-                    </h1>
-                </center>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-block">
+                        {{ trans('laralum_dashboard::general.no_widgets') }}<br>
+                        <span class="mdi mdi-emoticon-sad"></span>
+                    </div>
+                </div>
             </div>
         </div>
+        <br />
 
     @endforelse
 @endsection
