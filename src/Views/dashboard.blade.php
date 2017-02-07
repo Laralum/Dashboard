@@ -1,23 +1,21 @@
-@extends('laralum::layout')
-@section('breadcrumb')
-    <div class="ui breadcrumb">
-        <div class="active section">{{ trans('dashboard::general.dashboard') }}</div>
-    </div>
-@endsection
+@extends('laralum::layouts.master')
 @section('title', trans('dashboard::general.dashboard') )
-@section('icon', "dashboard")
+@section('icon', "mdi-view-dashboard")
 @section('subtitle')
-{{ trans('dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
+    {{ trans('dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
 @endsection
 @section('content')
-<div class="ui doubling stackable one column grid container">
     @forelse($widgets as $widget)
-
-        <div class="column">
-            <div class="ui padded segment ">
-                {!! $widget !!}
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-block">
+                        {!! $widget !!}
+                    </div>
+                </div>
             </div>
         </div>
+        <br />
 
     @empty
 
@@ -33,5 +31,4 @@
         </div>
 
     @endforelse
-</div>
 @endsection

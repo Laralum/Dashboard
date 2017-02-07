@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function index()
     {
         $widgets = Widgets::get();
-
+        
         return view('dashboard::dashboard', ['widgets' => $widgets]);
     }
 }

@@ -1,10 +1,8 @@
 <?php
 
-return ConsoleTVs\Charts\Charts::new('line', 'material')
-            ->setValues([1, 3, 2, 4])
-            ->setLabels(['First', 'Second', 'Third', 'Fourth'])
-            ->setResponsive(false)
-            ->setHeight(250)
-            ->setWidth(0)
-            ->setTitle('This is a sample widget from Dashboard module!')
+return ConsoleTVs\Charts\Facades\Charts::create('line', 'material')
+            ->values([1, 3, 2, 4])
+            ->labels(['First', 'Second', 'Third', 'Fourth'])
+            ->title('This is a sample widget from Dashboard module!')
+            ->height(250)
             ->render();
