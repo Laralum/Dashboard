@@ -11,5 +11,10 @@
             "email": "soc@erik.cat"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Laralum\\Dashboard\\": "./src"
+        }
+    },
     "minimum-stability": "dev"
 }
