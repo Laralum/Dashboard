@@ -2,7 +2,7 @@
     "name": "laralum/dashboard",
     "description": "Dashboard module for laralum",
     "require": {
-		"laralum/laralum": "1.*"
+		"laralum/laralum": "dev-master"
 	},
     "license": "MIT",
     "authors": [
@@ -11,5 +11,10 @@
             "email": "soc@erik.cat"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Laralum\\Dashboard\\": "./src"
+        }
+    },
     "minimum-stability": "dev"
 }
