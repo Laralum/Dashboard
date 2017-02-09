@@ -1,10 +1,6 @@
 [
     {
-        "text": "Sample Link Item",
-        "link": "https://google.com"
-    },
-    {
-        "text": "Sample Route Item",
+        "text": "Dashboard",
         "route": "laralum::dashboard"
     }
 ]
