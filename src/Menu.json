@@ -1,6 +1,8 @@
-[
-    {
+
+{
+    "name": "Dashboard",
+    "item": {
         "text": "Dashboard",
         "route": "laralum::dashboard"
     }
-]
+}
