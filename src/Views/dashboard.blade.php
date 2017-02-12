@@ -8,7 +8,7 @@
     @forelse($widgets as $widget)
         <div class="row">
             <div class="col-xl-12">
-                <div class="card">
+                <div class="card shadow">
                     <div class="card-block">
                         {!! $widget !!}
                     </div>
