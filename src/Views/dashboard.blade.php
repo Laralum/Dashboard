@@ -1,35 +1,29 @@
 @extends('laralum::layouts.master')
-@section('title', trans('laralum_dashboard::general.dashboard') )
-@section('icon', "mdi-view-dashboard")
+@section('title', __('laralum_dashboard::general.dashboard') )
+@section('icon', "ion-speedometer")
 @section('subtitle')
-    {{ trans('laralum_dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
+    {{ __('laralum_dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
+@endsection
+@section('breadcrumb')
+    <ul class="uk-breadcrumb">
+        <li><a href="{{ route('laralum::index') }}">{{ __('laralum_dashboard::general.home') }}</a></li>
+        <li><span href="">{{ __('laralum_dashboard::general.dashboard') }}</span></li>
+    </ul>
 @endsection
 @section('content')
-    @forelse($widgets as $widget)
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card shadow">
-                    <div class="card-block">
+    <div class="uk-container uk-container-large">
+        <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m">
+            @forelse($widgets as $widget)
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
                         {!! $widget !!}
                     </div>
                 </div>
-            </div>
+            @empty
+                <center>
+                    {{ __('laralum_dashboard::general.no_widgets') }}
+                </center>
+            @endforelse
         </div>
-        <br />
-
-    @empty
-
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-block">
-                        {{ trans('laralum_dashboard::general.no_widgets') }}<br>
-                        <span class="mdi mdi-emoticon-sad"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br />
-
-    @endforelse
+    </div>
 @endsection
