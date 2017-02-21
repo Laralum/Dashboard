@@ -12,7 +12,7 @@
 @endsection
 @section('content')
     <div class="uk-container uk-container-large">
-        <div uk-grid class="uk-child-width-1-1@s uk-child-width-1-2@m">
+        <div uk-grid class="uk-child-width-1-1@l uk-child-width-1-2@xl">
             @forelse($widgets as $widget)
                 <div>
                     <div class="uk-card uk-card-default uk-card-body">
