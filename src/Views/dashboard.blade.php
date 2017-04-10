@@ -1,29 +1,28 @@
 @extends('laralum::layouts.master')
 @section('title', __('laralum_dashboard::general.dashboard') )
 @section('icon', "ion-speedometer")
-@section('subtitle')
-    {{ __('laralum_dashboard::general.subtitle', ['name' => Auth::user()->name]) }}
-@endsection
+@section('subtitle', __('laralum_dashboard::general.subtitle', ['name' => Auth::user()->name]) )
 @section('breadcrumb')
     <ul class="uk-breadcrumb">
-        <li><a href="{{ route('laralum::index') }}">{{ __('laralum_dashboard::general.home') }}</a></li>
-        <li><span href="">{{ __('laralum_dashboard::general.dashboard') }}</span></li>
+        <li><a href="{{ route('laralum::index') }}">@lang('laralum_dashboard::general.home')</a></li>
+        <li><span href="">@lang('laralum_dashboard::general.dashboard')</span></li>
     </ul>
 @endsection
 @section('content')
+    @php
+        $user = \Laralum\Users\Models\User::findOrFail(Auth::id());
+    @endphp
     <div class="uk-container uk-container-large">
-        <div uk-grid class="uk-child-width-1-1@l uk-child-width-1-2@xl">
-            @forelse($widgets as $widget)
-                <div>
-                    <div class="uk-card uk-card-default uk-card-body">
-                        {!! $widget !!}
+        <div uk-grid>
+            @foreach ($widgets as $widget)
+                @if ((array_key_exists('permission', $widget)) and  ($user->hasPermission($widget['permission']) or $user->superAdmin()))
+                    <div class="uk-width-1-1@m uk-width-1-2@l">
+                        <div class="uk-card uk-card-default uk-card-body">
+                            {!! view($widget['view']) !!}
+                        </div>
                     </div>
-                </div>
-            @empty
-                <center>
-                    {{ __('laralum_dashboard::general.no_widgets') }}
-                </center>
-            @endforelse
+                @endif
+            @endforeach
         </div>
     </div>
 @endsection

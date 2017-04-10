@@ -28,16 +28,16 @@ class Widgets extends Facade
     {
         $widgets = [];
         foreach (Packages::all() as $package) {
-            $dir = __DIR__.'/../../'.$package.'/src/Widgets';
-
+            $dir = __DIR__.'/../../'.$package.'/src';
             $files = is_dir($dir) ? scandir($dir) : [];
+
             foreach ($files as $file) {
-                if ($file != '.' and $file != '..') {
-                    // Widget found, get the data
-                    $name = substr($file, 0, -4);
-                    if (!array_key_exists($name, $widgets)) {
-                        $widgets[$name] = include __DIR__.'/../../'.$package.'/src/Widgets/'.$file;
+                if ($file == 'Widgets.json') {
+                    $file_r = file_get_contents($dir . '/' . $file);
+                    foreach (json_decode($file_r, true) as $w) {
+                        array_push($widgets, $w);
                     }
+                    break;
                 }
             }
         }
