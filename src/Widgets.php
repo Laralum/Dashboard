@@ -35,6 +35,7 @@ class Widgets extends Facade
                 if ($file == 'Widgets.json') {
                     $file_r = file_get_contents($dir . '/' . $file);
                     foreach (json_decode($file_r, true) as $w) {
+                        $w['package'] = $package;
                         array_push($widgets, $w);
                     }
                     break;
@@ -42,6 +43,39 @@ class Widgets extends Facade
             }
         }
 
+        $widgets = static::orderByPreference($widgets);
+
         return $widgets;
+    }
+
+    /**
+     * Order the widgets by preference
+     */
+    public static function orderByPreference($widgets)
+    {
+        $preference = collect(['Laralum', 'Dashboard', 'Users', 'Roles', 'Permissions']);
+
+        $ordered_widgets = [];
+        $final_ordered_widgets = [];
+
+        $widgets = collect($widgets)->groupBy('package')->toArray();
+
+        foreach (Packages::all() as $package){
+            if (!in_array($package, $preference->toArray())) {
+                $preference->push($package);
+            }
+        }
+
+        $ordered_widgets = $preference->map(function($p) use ($widgets) {
+            return array_key_exists($p, $widgets) ? $widgets[$p] : null;
+        })->filter();
+
+        foreach ($ordered_widgets as $widget) {
+            foreach ($widget as $w) {
+                array_push($final_ordered_widgets, $w);
+            }
+        }
+
+        return $final_ordered_widgets;
     }
 }

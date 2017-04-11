@@ -14,5 +14,6 @@ return [
     'subtitle'      => 'Welcome back, :name',
     'no_widgets'    => 'There are no widgets',
     'visit_site'    => 'Visit Site',
+    'loading'       => 'Loading...',
 
 ];
