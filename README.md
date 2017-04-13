@@ -12,8 +12,8 @@
 
 ## Description
 
-This module gives you the possibility to customize Laralum's panel.
-Currently you can change the layout color and the favicon of administration pages.
+This module show a pretty dashboard with lots of widgets for quickly control your website activity.
+Some modules includes widgets, and depending on modules installed and the user's roles, every user will have a custom dashboard.
 
 ## Documentation
 
