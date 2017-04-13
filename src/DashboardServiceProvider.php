@@ -3,7 +3,6 @@
 namespace Laralum\Dashboard;
 
 use Illuminate\Support\ServiceProvider;
-use Laralum\Laralum\Menu;
 
 class DashboardServiceProvider extends ServiceProvider
 {
