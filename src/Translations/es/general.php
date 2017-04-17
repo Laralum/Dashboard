@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'dashboard'    => 'Tablero',
+    'dashboard'    => 'Panel de Control',
     'home'         => 'Inicio',
     'my_dashboard' => 'Mi tablero',
     'subtitle'     => 'Bienvenido de nuevo, :name',

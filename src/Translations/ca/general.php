@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'dashboard'    => 'Panell',
+    'dashboard'    => 'Tauler de Control',
     'home'         => 'Inici',
     'my_dashboard' => 'El meu tauler',
     'subtitle'     => 'Benvingut de nou, :name',
