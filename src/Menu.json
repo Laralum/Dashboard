@@ -1,9 +1,8 @@
 
 {
-    "name": "Dashboard",
     "items": [
         {
-            "text": "Dashboard",
+            "trans": "laralum_dashboard::general.dashboard",
             "route": "laralum::dashboard"
         }
     ]
