@@ -24,7 +24,7 @@
         }
 
         function getLocation() {
-            $.getJSON("http://freegeoip.net/json/", function(data) {
+            $.getJSON("https://freegeoip.net/json/", function(data) {
                 $('#location').text(data['region_name'] + ', ' + data['country_name']);
             });
         }
