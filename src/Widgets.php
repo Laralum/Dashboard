@@ -75,7 +75,7 @@ class Widgets extends Facade
                 array_push($final_ordered_widgets, $w);
             }
         }
-        dd($final_ordered_widgets);
+
         return $final_ordered_widgets;
     }
 }
