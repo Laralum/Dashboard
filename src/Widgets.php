@@ -53,7 +53,7 @@ class Widgets extends Facade
      */
     public static function orderByPreference($widgets)
     {
-        $preference = collect(['Laralum', 'Dashboard', 'Users', 'Roles', 'Permissions']);
+        $preference = collect(['laralum', 'dashboard', 'users', 'roles', 'permissions']);
 
         $ordered_widgets = [];
         $final_ordered_widgets = [];
@@ -75,7 +75,7 @@ class Widgets extends Facade
                 array_push($final_ordered_widgets, $w);
             }
         }
-
+        dd($final_ordered_widgets);
         return $final_ordered_widgets;
     }
 }
