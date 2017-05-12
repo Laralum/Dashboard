@@ -8,8 +8,8 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'dashboard'    => 'Instrumententafel',
-    'home'         => 'Zuhause',
+    'dashboard'    => 'Dashboard',
+    'home'         => 'Home',
     'my_dashboard' => 'Mein Dashboard',
     'subtitle'     => 'Willkommen zurück, :name',
     'no_widgets'   => 'Es gibt keine Widgets',
