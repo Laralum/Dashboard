@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laralum.com"><img height="150" src="https://avatars1.githubusercontent.com/u/22253051"></a></p>
+<p align="center"><a href="https://laralum.aitorriba.com"><img height="150" src="https://avatars1.githubusercontent.com/u/22253051"></a></p>
 
 <h1 align="center">Dashboard</h1>
 
@@ -18,7 +18,7 @@ Some modules includes widgets, and depending on modules installed and the user's
 ## Documentation
 
 <p align="center">
-<a href="https://laralum.com/docs/dashboard"><img height="120" src="http://i.imgur.com/47WnADd.png"></a>
+<a href="https://laralum.aitorriba.com/docs/dashboard"><img height="120" src="http://i.imgur.com/47WnADd.png"></a>
 </p>
 
 ## License
